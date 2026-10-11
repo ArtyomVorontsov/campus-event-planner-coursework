@@ -16,3 +16,4 @@ submission-evidence/
 .slides-build/
 .codex-finalizer/
 build_*.py
+**/.env.dev

@@ -22,3 +22,9 @@ A separate coursework project and lecture exercises by Voroncovs Artjoms.
 For static exercises, serve the `exercises` directory with `python3 -m http.server 3010 --directory exercises` and browse the relevant folder. The MCP exercise has a separate Node server and README.
 
 The supplied Sass article is reproduced as a university markup exercise with its disclaimer and attribution. Upstream MCP and library licenses are preserved. No credentials or local databases are included.
+
+## Additional prepared exercises
+
+- [Lecture 9 Snowflake](exercises/lecture9): SQL and sharing plan; account execution pending.
+- [Lecture 10 PHP](exercises/lecture10): form and Symfony application; PHPJunkyard download/integration pending.
+- [Lectures 11–12](exercises/lectures11-12): OpenAPI, Swagger, SQLite mock and Snowflake connector; live account verification pending.

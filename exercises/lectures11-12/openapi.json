@@ -1,0 +1,166 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Banking Message API",
+    "version": "1.0.0",
+    "description": "Educational banking status message storage. Synthetic tokens only; this API performs no payments.",
+    "contact": {
+      "name": "Voroncovs Artjoms",
+      "url": "https://github.com/ArtyomVorontsov/campus-event-planner-coursework"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:3013",
+      "description": "Local coursework server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Messages",
+      "description": "Banking status messages"
+    }
+  ],
+  "paths": {
+    "/api/messages": {
+      "post": {
+        "tags": ["Messages"],
+        "summary": "Store a message with API metadata",
+        "operationId": "createMessage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "version",
+                  "info",
+                  "transactionId",
+                  "cardId",
+                  "trusteeExternalId",
+                  "channelType",
+                  "status",
+                  "statusTimestamp",
+                  "timestamp",
+                  "message"
+                ],
+                "properties": {
+                  "transactionId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "cardId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "trusteeExternalId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "channelType": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "enum": ["WEB", "MOBILE", "BRANCH"]
+                  },
+                  "status": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "enum": ["PENDING", "APPROVED", "DECLINED"]
+                  },
+                  "statusTimestamp": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "format": "date-time"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "format": "date-time"
+                  },
+                  "message": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2000
+                  },
+                  "version": {
+                    "type": "string",
+                    "enum": ["1.0.0"]
+                  },
+                  "info": {
+                    "type": "object",
+                    "required": ["title"],
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "enum": ["Banking Message API"]
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "version": "1.0.0",
+                "info": {
+                  "title": "Banking Message API",
+                  "version": "1.0.0",
+                  "description": "Educational banking status message storage. Synthetic tokens only; this API performs no payments.",
+                  "contact": {
+                    "name": "Voroncovs Artjoms",
+                    "url": "https://github.com/ArtyomVorontsov/campus-event-planner-coursework"
+                  }
+                },
+                "transactionId": "demo-transaction-001",
+                "cardId": "card-token-demo-001",
+                "trusteeExternalId": "trustee-demo-001",
+                "channelType": "WEB",
+                "status": "PENDING",
+                "statusTimestamp": "2026-10-11T12:00:00Z",
+                "timestamp": "2026-10-11T12:00:00Z",
+                "message": "Synthetic campus event registration status"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Stored; response identifies mock or Snowflake mode"
+          },
+          "400": {
+            "description": "Validation failed"
+          },
+          "500": {
+            "description": "Storage unavailable"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Messages"],
+        "summary": "Read the latest 20 stored messages",
+        "responses": {
+          "200": {
+            "description": "Stored messages"
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "tags": ["Messages"],
+        "summary": "Check active storage connection",
+        "responses": {
+          "200": {
+            "description": "Active mode and ready status"
+          }
+        }
+      }
+    }
+  }
+}

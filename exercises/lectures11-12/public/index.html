@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Banking Message API • Coursework</title>
+    <link rel="stylesheet" href="/swagger/swagger-ui.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      header {
+        padding: 20px 40px;
+        background: #17233f;
+        color: white;
+        font: 16px system-ui;
+      }
+      header p {
+        margin-bottom: 0;
+      }
+      a {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Banking Message API</h1>
+      <p>
+        Educational message storage. Use synthetic card tokens and messages. No
+        payments are performed.
+      </p>
+      <p id="mode">Checking storage…</p>
+      <p>
+        <a href="/api/messages">View stored messages</a> ·
+        <a href="/openapi.json">Download specification</a>
+      </p>
+    </header>
+    <div id="swagger-ui"></div>
+    <script src="/swagger/swagger-ui-bundle.js"></script>
+    <script src="/init.js"></script>
+  </body>
+</html>
