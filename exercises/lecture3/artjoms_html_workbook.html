@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTML workshop notebook</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>HTML workshop notebook</h1>
+      <p>
+        <a href="artjoms_html_workbook.html?topic=html&amp;level=beginner"
+          >Sample GET link</a
+        >
+      </p>
+      <form
+        id="workshop"
+        action="artjoms_html_workbook.html"
+        method="get"
+        target="_self"
+        autocomplete="on"
+        accept-charset="UTF-8"
+      >
+        <fieldset>
+          <legend>Workshop registration</legend>
+          <label for="name">Name</label
+          ><input
+            id="name"
+            name="name"
+            required
+            maxlength="60"
+            placeholder="Your name"
+          /><label for="email">Email</label
+          ><input id="email" name="email" type="email" required /><label
+            for="topic"
+            >Topic</label
+          ><select id="topic" name="topic">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option></select
+          ><label for="notes">Notes</label
+          ><textarea id="notes" name="notes"></textarea
+          ><label
+            ><input type="checkbox" name="reminder" value="yes" /> Reminder
+            requested</label
+          ><button type="submit">Submit using GET</button>
+        </fieldset>
+      </form>
+      <p id="result" role="status"></p>
+      <h2>HTML video</h2>
+      <figure>
+        <iframe
+          width="560"
+          height="315"
+          style="max-width: 100%"
+          src="https://www.youtube-nocookie.com/embed/UB1O30fR-EE"
+          title="HTML Crash Course For Absolute Beginners"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+        <figcaption>
+          HTML Crash Course For Absolute Beginners — Traversy Media
+        </figcaption>
+      </figure>
+      <h2>Geolocation</h2>
+      <p>
+        Coordinates are displayed only on this page after browser permission.
+      </p>
+      <button id="locate">Show my location</button>
+      <p id="location" role="status">Location not requested.</p>
+      <h2>Drag and drop</h2>
+      <div id="source" class="track">
+        <span id="item" draggable="true" tabindex="0">Drag this HTML card</span>
+      </div>
+      <div id="target" class="track" aria-label="Drop target">
+        Drop card here
+      </div>
+      <button id="move-card">Move card (keyboard alternative)</button>
+      <h2>Storage</h2>
+      <label for="draft">Local note</label><input id="draft" name="draft" />
+      <p>Saved in localStorage on this device.</p>
+      <footer>Web Programming coursework — Voroncovs Artjoms</footer>
+    </main>
+    <script src="workbook.js"></script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f5f3ff;
+  color: #242742;
+  font:
+    17px/1.65 system-ui,
+    sans-serif;
+}
+main {
+  max-width: 920px;
+  margin: 36px auto;
+  padding: 36px;
+  background: white;
+  border-radius: 18px;
+}
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+h2 {
+  margin-top: 2rem;
+}
+a {
+  color: #5840c4;
+}
+label {
+  display: block;
+  margin: 0.6rem 0;
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  padding: 0.65rem;
+  border: 1px solid #b6aecb;
+  border-radius: 7px;
+}
+button {
+  cursor: pointer;
+  background: #6654db;
+  color: white;
+}
+button:hover {
+  background: #342681;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #ffac32;
+  outline-offset: 3px;
+}
+pre {
+  white-space: pre-wrap;
+  background: #f2effa;
+  padding: 20px;
+}
+aside {
+  border-left: 4px solid #6654db;
+  padding: 14px;
+  background: #f5f3ff;
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.track {
+  overflow: hidden;
+  height: 110px;
+  border: 1px dashed #867b9f;
+  padding: 12px;
+  margin: 20px 0;
+}
+.track img {
+  position: relative;
+  width: 75px;
+  height: 65px;
+  object-fit: contain;
+}
+footer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #665c7c;
+}
+@media (max-width: 650px) {
+  main {
+    padding: 20px;
+    margin: 12px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  input,
+  textarea {
+    max-width: 100%;
+  }
+}
